@@ -1,0 +1,46 @@
+<h1 id="tableLabel">Customers</h1>
+
+<p *ngIf="!customers"><em>Loading...</em></p>
+
+<input type="button" value="Create" class="btn btn-sm btn-primary" (click)="add()" />
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="customers">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone number</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <ng-template [ngIf]="editCustomer == nul || editCustomer?.id != customer.id" [ngIfElse]="edit">
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.phoneNumber }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="edit(customer)">Edit</button>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="delete(customer)">Delete</button>
+        </td>
+      </ng-template>
+    </tr>
+  </tbody>
+</table>
+
+
+<!--шаблон для редактирования-->
+<ng-template #edit>
+  <td>
+    <input type="text" [(ngModel)]="editCustomer.name" class="form-control" />
+  </td>
+  <td>
+    <input type="text" [(ngModel)]="editCustomer.phoneNumber" class="form-control" />
+  </td>
+  <td>
+    <input type="button" value="Save" (click)="save()" class="btn btn-sm btn-success" />
+  </td>
+  <td>
+    <input type="button" value="Cancel" (click)="cancel()" class="btn btn-sm btn-warning" />
+  </td>
+</ng-template>

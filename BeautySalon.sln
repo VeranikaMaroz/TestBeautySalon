@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeautySalon", "BeautySalon\BeautySalon.csproj", "{CF9F3B63-863E-4CDD-BB96-3F38E8FB60C0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeautySalonWebApi", "BeautySalonWebApi\BeautySalonWebApi.csproj", "{F8EC101C-2D95-40D5-9621-DE1E1A2BDD18}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InDesignDocumentCreator", "InDesignDocumentCreator\InDesignDocumentCreator.csproj", "{4BC6B851-A509-4F06-B3A9-1703220189A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{2D6C5924-C635-4868-982C-FEFC569E793F}"
+	ProjectSection(SolutionItems) = preProject
+		Run Api.bat = Run Api.bat
+		Run Client.bat = Run Client.bat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Results", "Results", "{00F33708-AE43-46E8-A00A-69808FFADB84}"
+	ProjectSection(SolutionItems) = preProject
+		Results\BeatySalonOrder_2020-10-28-23-48-34.indd = Results\BeatySalonOrder_2020-10-28-23-48-34.indd
+		Results\BeatySalonOrder_2020-10-28-23-48-34.pdf = Results\BeatySalonOrder_2020-10-28-23-48-34.pdf
+		Results\Customers.png = Results\Customers.png
+		Results\Order.png = Results\Order.png
+		Results\Orders.png = Results\Orders.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF9F3B63-863E-4CDD-BB96-3F38E8FB60C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF9F3B63-863E-4CDD-BB96-3F38E8FB60C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF9F3B63-863E-4CDD-BB96-3F38E8FB60C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF9F3B63-863E-4CDD-BB96-3F38E8FB60C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8EC101C-2D95-40D5-9621-DE1E1A2BDD18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8EC101C-2D95-40D5-9621-DE1E1A2BDD18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8EC101C-2D95-40D5-9621-DE1E1A2BDD18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8EC101C-2D95-40D5-9621-DE1E1A2BDD18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BC6B851-A509-4F06-B3A9-1703220189A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC6B851-A509-4F06-B3A9-1703220189A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BC6B851-A509-4F06-B3A9-1703220189A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC6B851-A509-4F06-B3A9-1703220189A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73AF3BB4-F7B8-4A3E-B422-CCCBDDF7F1B9}
+	EndGlobalSection
+EndGlobal

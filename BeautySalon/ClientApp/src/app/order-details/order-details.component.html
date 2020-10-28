@@ -1,0 +1,72 @@
+<h1 id="tableLabel">Order</h1>
+
+<ng-template [ngIf]="order != nul && order?.id != null" [ngIfElse]="create">
+  <h4>Customer {{order.customer.name}}</h4>
+  <h4>Date {{order.date | date:'short'}}</h4>
+
+  <h2>Details</h2>
+  <input type="button" value="Create" class="btn btn-sm btn-primary" (click)="add()" />
+  <table class='table table-striped' aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Product price</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let orderDetail of order.orderDetails">
+        <ng-template [ngIf]="editDetail == nul || editDetail?.id != orderDetail.id" [ngIfElse]="edit">
+          <td>{{ orderDetail.product.name }}</td>
+          <td>{{ orderDetail.quantity }}</td>
+          <td>{{ orderDetail.product.price }}</td>
+          <td>
+            <button class="btn btn-sm btn-primary" (click)="editDetails(orderDetail)">Edit</button>
+          </td>
+          <td>
+            <button class="btn btn-sm btn-danger" (click)="deleteDetail(orderDetail)">Delete</button>
+          </td>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
+
+<div class="nav-link">
+  <a [routerLink]="['/all-orders']" class="btn btn-sm btn-primary">To all orders</a>
+</div>
+
+<!--шаблон для редактирования позиций-->
+<ng-template #edit>
+  <td>
+    <select [(ngModel)]="editDetail.product">
+      <option *ngFor="let product of products" [ngValue]="product">{{product.name}} {{product.price}}</option>
+    </select>
+  </td>
+  <td>
+    <input type="number" [(ngModel)]="editDetail.quantity" class="form-control" />
+  </td>
+  <td>
+    <input type="button" value="Save" (click)="saveDetail()" class="btn btn-sm btn-success" />
+  </td>
+  <td>
+    <input type="button" value="Cancel" (click)="cancelDetail()" class="btn btn-sm btn-warning" />
+  </td>
+</ng-template>
+
+<!--шаблон для создания заказа-->
+<ng-template #create>
+  <div class="form-group">
+    <label>Customer</label>
+    <select [(ngModel)]="customer" class="form-control">
+      <option *ngFor="let c of customers" [ngValue]="c">{{c.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Date</label>
+    <input type="datetime-local" [(ngModel)]="date" class="form-control" />
+  </div>
+  <input type="button" value="Save" (click)="save()" class="btn btn-success" />
+</ng-template>
