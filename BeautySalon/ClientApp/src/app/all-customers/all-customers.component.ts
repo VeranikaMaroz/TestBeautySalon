@@ -48,10 +48,10 @@ export class CustomersComponent {
     this.customers.unshift(this.editCustomer);
   }
 
-  edit(p: Customer) {
+  updateCustomer(customer: Customer) {
     if (this.editCustomer != null)
       this.cancel();
-    this.editCustomer = p;
+    this.editCustomer = customer;
   }
 
   cancel() {
